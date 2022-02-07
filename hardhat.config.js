@@ -1,7 +1,7 @@
 require("@nomiclabs/hardhat-waffle");
 require('@nomiclabs/hardhat-ethers');
 require("@nomiclabs/hardhat-etherscan");
-const { bscscanApiKey } = require('./secrets.json');
+const { mnemonic } = require('./secrets.json');
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -28,20 +28,16 @@ module.exports = {
     hardhat: {},
     mumbai: {
       url: 'https://rpc-mumbai.maticvigil.com',
-      accounts: [ApiKey],
+      accounts: [mnemonic],
       // apiKey: `DDX84A74SWWTF7J1YEMPWT46FC86Q8YC11`
     },
     ropsten: {
       url: "https://ropsten.infura.io/v3/e61ce3c1ff0f439c8cc620c964b8ecef",
-      accounts: [
-        `0xcf11856dd6ce91ab7affef4ed7154395a9ad7b7a7e6342c8a2a71e30deb6b221`,
-      ],
+      accounts: [mnemonic],
     },
     rinkeby: {
       url: "https://rinkeby.infura.io/v3/2685ba1bcbf54312bb8683ddcc02f79d",
-      accounts: [
-        `a18044758c0f8c1a40ca3060ba321c013cd89e8c4cb86af852626fe24e57a7b0`,
-      ],
+      accounts: [mnemonic],
       apiKey: `8ZFFIRUXPPWQ74H525YIX8NMZQ26M35RZR`
     },
     // tron: {
@@ -54,13 +50,13 @@ module.exports = {
       url: "https://data-seed-prebsc-1-s1.binance.org:8545",
       chainId: 97,
       gasPrice: 20000000000,
-      accounts: ["a18044758c0f8c1a40ca3060ba321c013cd89e8c4cb86af852626fe24e57a7b0"]
+      accounts: [mnemonic]
     },
     bsc_mainnet: {
       url: "https://bsc-dataseed.binance.org/",
       chainId: 56,
       gasPrice: 20000000000,
-      accounts: ["a18044758c0f8c1a40ca3060ba321c013cd89e8c4cb86af852626fe24e57a7b0"]
+      accounts: [mnemonic]
     },
   },
   etherscan: {
